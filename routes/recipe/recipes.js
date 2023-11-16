@@ -50,17 +50,10 @@ router.post('/create-recipe',verify, async (req, res) => {
 
 router.put('/update-recipe',verify, async (req, res) => {
 
-    const recipe = new Recipe({
-        recipe_name: req.body.recipe_name,
-        calorie: req.body.calorie,
-        image: req.body.image,
-        items: req.body.items,
-    });
-
     const filter = {recipe_name: req.body.recipe_name}
 
     try{
-        const updateRecipe = await Recipe.findOneAndUpdate(filter, recipe);
+        const updateRecipe = await Recipe.findOneAndUpdate(filter, req.body);
         res.status(200).send(updateRecipe);
     }catch(error){
         res.status(500).send(error);

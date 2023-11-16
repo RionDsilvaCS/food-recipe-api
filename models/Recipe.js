@@ -16,7 +16,7 @@ const itemSchema = new mongoose.Schema({
 });
 
 const recipeSchema = new mongoose.Schema({
-    _id: { type: String },
+    // _id: { type: String },
     recipe_name: {
         type: String,
         required: true,

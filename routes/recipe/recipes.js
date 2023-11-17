@@ -62,7 +62,7 @@ router.put('/update-recipe',verify, async (req, res) => {
 });
 
 
-router.delete('/delete-recipe',verify, async (req, res) => {
+router.post('/delete-recipe',verify, async (req, res) => {
 
     const recipe = {recipe_name: req.body.recipe_name}
 
